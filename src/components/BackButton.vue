@@ -4,6 +4,11 @@ import { returnToPrevPage } from "../helpers/returnToPrevPage";
 defineProps<{ router: Router }>();
 </script>
 <template>
-  <button class="btn" @click="returnToPrevPage(router)">назад</button>
+  <button
+    class="btn block box-radius box-shadow"
+    @click="returnToPrevPage(router)"
+  >
+    назад
+  </button>
 </template>
-<style lang=""></style>
+<style scoped></style>

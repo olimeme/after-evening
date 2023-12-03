@@ -4,7 +4,7 @@ defineProps<{ msg: string; sub: string }>();
 
 <template>
   <h1>{{ msg }}</h1>
-  <h5>{{ sub }}</h5>
+  <p>{{ sub }}</p>
 </template>
 
 <style scoped></style>
