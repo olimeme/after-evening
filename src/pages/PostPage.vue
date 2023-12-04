@@ -18,11 +18,11 @@ onBeforeMount(() => {
     if (loadingDots.value.length === 3) loadingDots.value = ".";
     else loadingDots.value += ".";
   }, 400);
-
   fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
     .then((res) => {
+      debugger;
       if (!res.ok) throw new Error("Post not found");
-      res.json();
+      return res.json();
     })
     .then((data) => (post.value = data))
     .catch((err) => (error.value = err.message))
