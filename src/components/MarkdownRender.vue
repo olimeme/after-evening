@@ -9,7 +9,6 @@ import MarkdownItIns from "markdown-it-ins";
 import MarkdownItMark from "markdown-it-mark";
 import MarkdownItAnchor from "markdown-it-anchor";
 import MarkdownItFootnote from "markdown-it-footnote";
-import MarkdownItContainer from "markdown-it-container";
 import MarkdownItHighlightjs from "markdown-it-highlightjs";
 import MarkdownItSub from "markdown-it-sub";
 import MarkdownItSup from "markdown-it-sup";
@@ -22,7 +21,6 @@ const markdown = new MarkdownIt()
   .use(MarkdownItAbbr)
   .use(MarkdownItAnchor)
   .use(MarkdownItFootnote)
-  .use(MarkdownItContainer)
   .use(MarkdownItHighlightjs)
   .use(MarkdownItSub)
   .use(MarkdownItSup)
