@@ -1,11 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&family=Rubik+Mono+One&display=swap"); */
 body {
   margin: 0;
   box-sizing: border-box;
   background-color: #6b8fa3;
   color: #ffb775;
-  font-family: "Press Start 2P", monospace;
+  font-family: "Press Start 2P", sans-serif;
   border-radius: 5px;
+  line-height: inherit;
 }
 
 h1,
@@ -13,17 +15,81 @@ h2 {
   text-shadow: 8px 8px rgba(0, 0, 0, 0.2);
 }
 
+p,
+li {
+  font-family: "Space Mono", monospace;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #ffb775;
+}
+
+pre {
+  font-family: "Space Mono", monospace;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  background-color: #61859a;
+  border-radius: 5px;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+blockquote {
+  display: block;
+  border-left: 4px solid #ffb775;
+  padding-left: 20px;
+  margin: 20px 0;
+  background-color: #61859a;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+}
+
+td,
+th {
+  border: 4px solid #ffb775;
+  text-align: left;
+  padding: 8px;
+  font-size: 0.7rem;
+}
+
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
 }
 
 .section {
   width: 100%;
-  max-width: 800px;
-  margin: 10px auto;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 80px;
   text-wrap: pretty;
+}
+
+.loading {
+  font-family: "Press Start 2P", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.error {
+  font-family: "Press Start 2P", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  color: red;
 }
 
 @media (max-width: 768px) {
@@ -40,7 +106,7 @@ h2 {
   }
   .section {
     width: 100%;
-    margin: 10px auto;
+    margin: 20px auto;
   }
 }
 

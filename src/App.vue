@@ -1,3 +1,5 @@
+<script lang="ts"></script>
+
 <template>
   <div class="wrapper">
     <router-view />

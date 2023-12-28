@@ -2,9 +2,10 @@
 import { onBeforeMount, ref } from "vue";
 import BackButton from "../components/BackButton.vue";
 import { useRoute, useRouter } from "vue-router";
-// import { PostProps } from "../components/Post.vue";
+import MarkdownRender from "../components/MarkdownRender.vue";
+import { TPost } from "../types";
 
-const post = ref<any | null>(null);
+const post = ref<TPost | null>(null);
 const loading = ref<boolean>(false);
 const loadingDots = ref<string>(".");
 const error = ref<string>("");
@@ -14,13 +15,14 @@ const postId: number = +route.params.postId;
 
 onBeforeMount(() => {
   loading.value = true;
+
   const intervalId = setInterval(() => {
     if (loadingDots.value.length === 3) loadingDots.value = ".";
     else loadingDots.value += ".";
   }, 400);
-  fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+
+  fetch(`https://after-evening.onrender.com/posts/${postId}`)
     .then((res) => {
-      debugger;
       if (!res.ok) throw new Error("Post not found");
       return res.json();
     })
@@ -32,15 +34,15 @@ onBeforeMount(() => {
     });
 });
 </script>
+
 <template>
   <div class="section">
     <BackButton :router="router" />
     <div v-if="loading">
       <p class="loading">loading<span v-html="loadingDots"></span></p>
     </div>
-    <div v-if="post">
-      <h1>{{ post.title }}</h1>
-      <p>{{ post.body }}</p>
+    <div v-if="post" class="post-section box-shadow">
+      <MarkdownRender :source="post.content" />
     </div>
     <div v-else-if="!post && !loading">
       <p class="error">Нет поста пацаны, закругляемся</p>
@@ -49,24 +51,12 @@ onBeforeMount(() => {
 </template>
 
 <style scoped>
-h1,
-p {
-  text-wrap: balance;
-}
-h1 {
-  margin-bottom: 2rem;
-  line-height: 1.3;
-}
-p {
-  line-height: 1.4;
-}
-.loading {
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.error {
-  text-align: center;
-  color: red;
+.post-section {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  padding: 1.8rem;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  border: 4px solid #ffb775;
 }
 </style>

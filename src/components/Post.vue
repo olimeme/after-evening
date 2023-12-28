@@ -1,23 +1,20 @@
 <script setup lang="ts">
 export interface PostProps {
-  postId: number;
-  heading: string;
-  sub?: string;
+  filename: string;
 }
 
-const { heading, sub } = defineProps<PostProps>();
+const { filename } = defineProps<PostProps>();
 </script>
 
 <template>
   <div class="post-block box-radius box-shadow">
-    <h3>{{ heading }}</h3>
-    <h5 class="muted" v-if="sub">{{ sub }}</h5>
+    <h3>{{ filename }}</h3>
   </div>
 </template>
 
 <style scoped>
 .post-block {
-  min-height: 5rem;
+  min-height: 4rem;
   padding: 1rem;
   border: 4px solid #ffb775;
   margin-bottom: 1rem;
@@ -25,7 +22,7 @@ const { heading, sub } = defineProps<PostProps>();
 
 .post-block h3 {
   line-height: 1.3;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
 }
 
 .post-block:hover {
