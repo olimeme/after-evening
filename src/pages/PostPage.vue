@@ -4,6 +4,7 @@ import BackButton from "../components/BackButton.vue";
 import { useRoute, useRouter } from "vue-router";
 import MarkdownRender from "../components/MarkdownRender.vue";
 import { TPost } from "../types";
+import FooterSection from "../components/FooterSection.vue";
 
 const post = ref<TPost | null>(null);
 const loading = ref<boolean>(false);
@@ -48,14 +49,13 @@ onBeforeMount(() => {
       <p class="error">Нет поста пацаны, закругляемся</p>
     </div>
   </div>
+  <FooterSection />
 </template>
 
 <style scoped>
 .post-section {
-  font-size: 1.2rem;
   line-height: 1.6;
   padding: 1.8rem;
-  margin: 1rem 0;
   border-radius: 0.5rem;
   border: 4px solid #ffb775;
 }

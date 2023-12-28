@@ -8,17 +8,18 @@ body {
   font-family: "Press Start 2P", sans-serif;
   border-radius: 5px;
   line-height: inherit;
+  position: relative;
+  min-height: 90vh;
 }
 
 h1,
 h2 {
-  text-shadow: 8px 8px rgba(0, 0, 0, 0.2);
+  text-shadow: 4px 4px rgba(0, 0, 0, 0.2);
 }
 
 p,
 li {
   font-family: "Space Mono", monospace;
-  font-size: 1.2rem;
   line-height: 1.5;
   margin: 0;
   padding: 0;
@@ -118,7 +119,6 @@ th {
   background-color: #6b8fa3;
   color: #ffb775;
   font-family: "Press Start 2P", monospace;
-  font-size: 1rem;
   text-decoration: none;
   text-transform: uppercase;
   display: block;
@@ -128,7 +128,7 @@ th {
 .btn:hover {
   background-color: #ffb775;
   color: #6b8fa3;
-  box-shadow: 8px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.4);
   cursor: pointer;
 }
 
@@ -137,7 +137,7 @@ th {
 }
 
 .box-shadow {
-  box-shadow: 8px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
 }
 
 .router-link {

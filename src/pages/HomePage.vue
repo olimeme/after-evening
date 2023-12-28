@@ -4,6 +4,7 @@ import Post from "../components/Post.vue";
 import { TPost } from "../types";
 import { useRouter } from "vue-router";
 import { onBeforeMount, ref } from "vue";
+import FooterSection from "../components/FooterSection.vue";
 
 const posts = ref<TPost[]>();
 const loading = ref<boolean>(false);
@@ -53,6 +54,7 @@ const router = useRouter();
       <p class="error">Нет постов пацаны, закругляемся</p>
     </div>
   </div>
+  <FooterSection />
 </template>
 
 <style>

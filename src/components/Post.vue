@@ -28,7 +28,7 @@ const { filename } = defineProps<PostProps>();
 .post-block:hover {
   background-color: #ffb775;
   color: #6b8fa3;
-  box-shadow: 8px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.4);
   cursor: pointer;
 }
 </style>
