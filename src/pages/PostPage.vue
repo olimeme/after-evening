@@ -5,6 +5,7 @@ import { useRoute, useRouter } from "vue-router";
 import MarkdownRender from "../components/MarkdownRender.vue";
 import { TPost } from "../types";
 import FooterSection from "../components/FooterSection.vue";
+import setTitleAndDescription from "../helpers/setTitleAndDescription";
 
 const post = ref<TPost | null>(null);
 const loading = ref<boolean>(false);
@@ -27,7 +28,13 @@ onBeforeMount(() => {
       if (!res.ok) throw new Error("Post not found");
       return res.json();
     })
-    .then((data) => (post.value = data))
+    .then((data) => {
+      post.value = data;
+      setTitleAndDescription(
+        data.filename.slice(0, -3),
+        data.content.slice(0, 50) + "..."
+      );
+    })
     .catch((err) => (error.value = err.message))
     .finally(() => {
       loading.value = false;

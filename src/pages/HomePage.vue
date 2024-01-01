@@ -5,13 +5,14 @@ import { TPost } from "../types";
 import { useRouter } from "vue-router";
 import { onBeforeMount, ref } from "vue";
 import FooterSection from "../components/FooterSection.vue";
+import setTitleAndDescription from "../helpers/setTitleAndDescription";
 
 const posts = ref<TPost[]>();
 const loading = ref<boolean>(false);
 const loadingDots = ref<string>(".");
 const error = ref<string>("");
 
-onBeforeMount(async () => {
+onBeforeMount(() => {
   loading.value = true;
 
   const intervalId = setInterval(() => {
@@ -24,6 +25,10 @@ onBeforeMount(async () => {
     .then((data) => (posts.value = data))
     .catch((err) => (error.value = err.message))
     .finally(() => {
+      setTitleAndDescription(
+        "После Вечера",
+        "Блог фронтендера, который пишет о том, что ему интересно"
+      );
       loading.value = false;
       clearInterval(intervalId);
     });
