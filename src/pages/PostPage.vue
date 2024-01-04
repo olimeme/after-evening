@@ -44,7 +44,7 @@ onBeforeMount(() => {
 </script>
 
 <template>
-  <div class="section">
+  <section class="section">
     <BackButton :router="router" />
     <div v-if="loading">
       <p class="loading">loading<span v-html="loadingDots"></span></p>
@@ -55,7 +55,8 @@ onBeforeMount(() => {
     <div v-else-if="!post && !loading">
       <p class="error">Нет поста пацаны, закругляемся</p>
     </div>
-  </div>
+    <BackButton :router="router" />
+  </section>
   <FooterSection />
 </template>
 

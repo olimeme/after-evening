@@ -38,10 +38,10 @@ const router = useRouter();
 </script>
 
 <template>
-  <div class="section">
+  <header class="section">
     <Heading msg="После Вечера" sub="блог фронтера" />
-  </div>
-  <div class="section">
+  </header>
+  <section class="section">
     <div v-if="loading">
       <p class="loading">loading<span v-html="loadingDots"></span></p>
     </div>
@@ -58,7 +58,7 @@ const router = useRouter();
     <div v-else-if="!posts && !loading">
       <p class="error">Нет постов пацаны, закругляемся</p>
     </div>
-  </div>
+  </section>
   <FooterSection />
 </template>
 
