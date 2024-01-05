@@ -49,7 +49,7 @@ onBeforeMount(() => {
     <div v-if="loading">
       <p class="loading">loading<span v-html="loadingDots"></span></p>
     </div>
-    <div v-if="post" class="post-section box-shadow">
+    <div v-if="post" class="section-content box-shadow">
       <MarkdownRender :source="post.content" />
     </div>
     <div v-else-if="!post && !loading">
@@ -61,9 +61,10 @@ onBeforeMount(() => {
 </template>
 
 <style scoped>
-.post-section {
-  line-height: 1.6;
-  padding: 1.8rem;
+.section-content {
+  line-height: 1.4;
+  padding: 1rem;
+  word-wrap: break-word;
   border-radius: 0.5rem;
   border: 4px solid #ffb775;
 }
