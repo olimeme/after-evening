@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
 /* @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&family=Rubik+Mono+One&display=swap"); */
 body {
   margin: 0;
@@ -17,12 +18,18 @@ h2 {
   text-shadow: 4px 4px rgba(0, 0, 0, 0.2);
 }
 
-p,
 li {
-  font-family: "Space Mono", monospace;
-  line-height: 1.5;
+  font-family: "PT Mono", monospace;
+  line-height: 1.3;
   margin: 0;
   padding: 0;
+}
+
+p {
+  font-family: "PT Mono", monospace;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  line-height: 1.1;
 }
 
 a {
@@ -30,9 +37,9 @@ a {
 }
 
 pre {
-  font-family: "Space Mono", monospace;
+  font-family: "PT Mono", monospace;
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.1;
   background-color: #61859a;
   border-radius: 5px;
   padding: 20px;
